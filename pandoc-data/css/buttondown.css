@@ -109,6 +109,13 @@ h1, h2, h3, h4, h5, h6
     /* font-family: "Liberation Serif", "Georgia", "Times New Roman", serif; /* Serif headers */
 
     page-break-after: avoid; /* Firefox, Chrome, and Safari do not support the property value "avoid" */
+
+    margin: 20px 0 10px;
+    padding: 0;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
 }
 
 /* Pandoc with --section-divs option */
