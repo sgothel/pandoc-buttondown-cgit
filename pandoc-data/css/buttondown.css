@@ -100,6 +100,25 @@ nav#TOC > input:checked + ul {
         }
     }
 
+/* ---- Content ---- */
+
+div.content
+    {
+        color: #111111;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+div#cgit a
+    {
+        color: #1212a0;
+    }
+
+div#cgit a.sourceLine
+    {
+        color: #111111;
+    }
+
 /* ---- Headers and sections ---- */
 
 h1, h2, h3, h4, h5, h6
