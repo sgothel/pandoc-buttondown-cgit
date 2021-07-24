@@ -10,7 +10,13 @@
 #clean:
 #	rm -f *.b *.c
 
-all: pandoc-data/css/cgit-buttondown.css
+all: pandoc-data/css/cgit-buttondown.css pandoc-buttondown-cgit.tgz
 
 pandoc-data/css/cgit-buttondown.css: pandoc-data/css/buttondown.css
 	cpp $< | cat -s > $@
+
+pandoc-buttondown-cgit.tgz:
+	tar czf pandoc-buttondown-cgit.tgz cgit pandoc-data
+
+clean:
+	rm -f pandoc-buttondown-cgit.tgz
