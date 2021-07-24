@@ -68,6 +68,29 @@ div#TOC, nav#TOC
     margin-bottom: 0.5em;
     }
 
+nav#TOC {
+  margin-bottom: var(--line-height); 
+  /* padding-left: 1.5rem; */
+  padding-bottom: 0.5rem;
+}
+
+nav#TOC input {
+  display: none;
+}
+
+nav#TOC label {
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+nav#TOC > ul {
+  display: none;
+}
+
+nav#TOC > input:checked + ul {
+  display: block;
+}
+
 @media print
     {
     div#TOC, nav#TOC
