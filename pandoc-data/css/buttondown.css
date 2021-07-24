@@ -120,7 +120,12 @@ h2 {
 
 /* Pandoc with --section-divs option */
 
-div div, section section /* Nested sections */
+div div
+    {
+    /* margin-left: 2em; */ /* This will increasingly indent nested header sections */
+    }
+
+section section /* Nested sections */
     {
     margin-left: 2em; /* This will increasingly indent nested header sections */
     }
@@ -335,8 +340,9 @@ table
     border-collapse: collapse;
     border-spacing: 0; /* IE 6 */
 
+    /* 
     border-bottom: 2pt solid #000;
-    border-top: 2pt solid #000; /* The caption on top will not have a bottom-border */
+    border-top: 2pt solid #000; */ /* The caption on top will not have a bottom-border */
 
     /* Center */
     margin-left: auto;
