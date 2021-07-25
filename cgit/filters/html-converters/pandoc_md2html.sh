@@ -1,6 +1,14 @@
 #!/bin/sh
 
+title_name=
+if [ -n "$1" ]; then
+    title_name=$1
+else
+    title_name=${CGIT_REPO_NAME}
+fi
+
 /usr/bin/pandoc \
+  -M pagetitle="${title_name}" \
   --data-dir /srv/www/pandoc-data \
   --from gfm \
   --to html5+smart \
