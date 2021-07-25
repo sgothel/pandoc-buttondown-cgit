@@ -7,7 +7,7 @@ for which a shell filter invocation script is provided: `cgit/filters/html-conve
 
 The original stylesheet was written by [Ryan Gray in Februrary 2021](https://gist.github.com/ryangray/1882525).
 
-## Features
+## cgit integration
 
 If using the provided `cgit/filters/html-converters/pandoc_md2html.sh` 
 via the given symbolic link to cgit's default `cgit/filters/html-converters/md2html`,
