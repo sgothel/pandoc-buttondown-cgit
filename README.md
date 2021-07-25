@@ -5,7 +5,7 @@
 The stylesheet also includes `cgit` integration,
 for which a shell filter invocation script is provided: `cgit/filters/html-converters/pandoc_md2html.sh`.
 
-The original stylesheet was written by [Ryan Gray in Februrary 2021](https://gist.github.com/ryangray/1882525).
+The original stylesheet was written by [Ryan Gray in Februrary 2011](https://gist.github.com/ryangray/1882525).
 
 ## cgit integration
 
