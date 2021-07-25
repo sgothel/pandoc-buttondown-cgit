@@ -7,6 +7,18 @@ for which a shell filter invocation script is provided: `cgit/filters/html-conve
 
 The original stylesheet was written by [Ryan Gray in Februrary 2021](https://gist.github.com/ryangray/1882525).
 
+## Features
+
+If using the provided `cgit/filters/html-converters/pandoc_md2html.sh` 
+via the given symbolic link to cgit's default `cgit/filters/html-converters/md2html`,
+all about pages using markup are rendered nicely.
+
+Note: cgit's `about-filter` hook `cgit/filters/about-formatting.sh` invokes `cgit/filters/html-converters/md2html`.
+
+Additionally, if using the provided `cgit/filters/syntax-highlighting.sh`
+via cgit's `source-filter` hook, html-converters are used for known extensions (markdown, rst, man, html, txt).
+Note: This filter hook also invokes `cgit/filters/html-converters/md2html` for markup.
+
 ## Motivation
 
 It was bothering me to have a broken incompatible markdown
