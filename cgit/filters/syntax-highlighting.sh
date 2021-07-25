@@ -107,6 +107,28 @@ EXTENSION="${BASENAME##*.}"
 # map Makefile and Makefile.* to .mk
 [ "${BASENAME%%.*}" = "Makefile" ] && EXTENSION=mk
 
+use_htmlconv=0
+case "$(printf '%s' "$EXTENSION" | tr '[:upper:]' '[:lower:]')" in
+	markdown|mdown|md|mkd) use_htmlconv=1; ;;
+	*.rst) use_htmlconv=1; ;;
+	*.[1-9]) use_htmlconv=1; ;;
+	*.htm|*.html) use_htmlconv=1; ;;
+	*.txt) use_htmlconv=1; ;;
+esac
+if [ ${use_htmlconv} -eq 1 ]; then
+    # Close cgit's pre-code styles, rely on html-converter
+    echo "</code></pre>"
+
+    cd "$(dirname $0)/html-converters/"
+    case "$(printf '%s' "$EXTENSION" | tr '[:upper:]' '[:lower:]')" in
+        markdown|mdown|md|mkd) exec ./md2html "$1"; ;;
+        *.rst) exec ./rst2html "$1"; ;;
+        *.[1-9]) exec ./man2html "$1"; ;;
+        *.htm|*.html) exec cat; ;;
+        *.txt) exec ./txt2html "$1"; ;;
+    esac
+fi
+
 # highlight versions 2 and 3 have different commandline options. Specifically,
 # the -X option that is used for version 2 is replaced by the -O xhtml option
 # for version 3.
