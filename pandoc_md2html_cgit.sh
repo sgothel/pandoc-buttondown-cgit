@@ -16,7 +16,7 @@ title_name=`basename ${ifile}`
 /usr/bin/pandoc \
   -M pagetitle="${title_name}" \
   --data-dir ${rootdir}/pandoc-data \
-  --from gfm \
+  --from markdown+lists_without_preceding_blankline \
   --to html5+smart \
   --template=cgit-buttondown \
   --include-before-body="${rootdir}/pandoc-data/css/style-open.html" \
