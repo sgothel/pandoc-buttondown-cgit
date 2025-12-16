@@ -10,7 +10,7 @@ fi
 /usr/bin/pandoc \
   -M pagetitle="${title_name}" \
   --data-dir /srv/www/pandoc-data \
-  --from gfm \
+  --from markdown+lists_without_preceding_blankline \
   --to html5+smart \
   --template=cgit-buttondown \
   --include-before-body="/srv/www/pandoc-data/css/style-open.html" \
